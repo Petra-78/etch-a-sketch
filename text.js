@@ -5,6 +5,18 @@ const rainbowBtn = document.querySelector(".rainbow-btn");
 const gradBtn = document.querySelector(".gradient-btn");
 const blackBtn = document.querySelector(".black-btn");
 
+let mouseDown = false
+
+document.addEventListener("mousedown", () => {
+    mouseDown = true;
+});
+
+document.addEventListener("mouseup", () => {
+    mouseDown = false;
+});
+
+document.body.addEventListener("dragstart", e => e.preventDefault());
+
 function makeGrid(num) {
     mainCont.innerHTML = "";
 
@@ -23,7 +35,9 @@ makeGrid(16);
 const gridHover = document.querySelectorAll(".grid-box");
     gridHover.forEach(grid => {
     grid.addEventListener ("mouseover", function() {
+        if (mouseDown) {
         grid.style.backgroundColor = "black";
+        }
 });
 });
 
@@ -40,7 +54,9 @@ gridBtn.addEventListener("click", () => {
     const gridHover = document.querySelectorAll(".grid-box");
         gridHover.forEach(grid => {
             grid.addEventListener ("mouseover", function() {
+                if (mouseDown) {
                 grid.style.backgroundColor = "black";
+                }
     });
 });
 });
@@ -72,8 +88,10 @@ rainbowBtn.addEventListener("click", () => {
     const gridHover = document.querySelectorAll(".grid-box")
         gridHover.forEach(grid => {
             grid.addEventListener("mouseover", () => {
+                if (mouseDown) {
                 grid.style.backgroundColor = randomColor();
                 grid.style.opacity = 1;
+                }
         });
     });
 });
@@ -84,8 +102,10 @@ blackBtn.addEventListener("click", () => {
     const gridHover = document.querySelectorAll(".grid-box")
         gridHover.forEach(grid => {
             grid.addEventListener("mouseover", () => {
+                if (mouseDown) {
                 grid.style.backgroundColor = "black";
                 grid.style.opacity = 1;
+                }
         });
     });
 });
