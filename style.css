@@ -27,7 +27,7 @@ body {
     /* box-shadow: 0px 0px 0px 0.2px rgb(107, 107, 107) inset; */
 }
 
-.buttons {
+.buttons, .extras {
     display: flex;
     gap: 30px;
     margin: 0px;
@@ -44,3 +44,4 @@ button {
     font-size: 17px;
     cursor: pointer;
 }
+
