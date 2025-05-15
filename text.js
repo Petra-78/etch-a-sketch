@@ -2,7 +2,8 @@ const mainCont = document.querySelector(".main-container");
 const gridBtn = document.querySelector(".grid-btn");
 const clearBtn = document.querySelector(".clear-btn");
 const rainbowBtn = document.querySelector(".rainbow-btn");
-const gradBtn = document.querySelector(".gradient-button");
+const gradBtn = document.querySelector(".gradient-btn");
+const blackBtn = document.querySelector(".black-btn");
 
 function makeGrid(num) {
     mainCont.innerHTML = "";
@@ -16,6 +17,17 @@ function makeGrid(num) {
         mainCont.appendChild(gridBox);
     }
 }
+
+makeGrid(16);
+
+const gridHover = document.querySelectorAll(".grid-box");
+    gridHover.forEach(grid => {
+    grid.addEventListener ("mouseover", function() {
+        grid.style.backgroundColor = "black";
+});
+});
+
+
 
 gridBtn.addEventListener("click", () => {
     let gridSize = prompt("What size canvas do you want? (max. 100)");
@@ -34,13 +46,14 @@ gridBtn.addEventListener("click", () => {
 });
 
 
-
 clearBtn.addEventListener("click", () => {
     const gridHover = document.querySelectorAll(".grid-box");
         gridHover.forEach(grid => {
             grid.style.backgroundColor = "rgb(214, 235, 236)";
     });
 });
+
+
 
 function randomNum() {
     let num = Math.round(Math.random() * 256);
@@ -55,12 +68,28 @@ function randomColor() {
     return rgb;
 }
 
-
 rainbowBtn.addEventListener("click", () => {
     const gridHover = document.querySelectorAll(".grid-box")
         gridHover.forEach(grid => {
             grid.addEventListener("mouseover", () => {
                 grid.style.backgroundColor = randomColor();
+                grid.style.opacity = 1;
         });
     });
 });
+
+
+
+blackBtn.addEventListener("click", () => {
+    const gridHover = document.querySelectorAll(".grid-box")
+        gridHover.forEach(grid => {
+            grid.addEventListener("mouseover", () => {
+                grid.style.backgroundColor = "black";
+                grid.style.opacity = 1;
+        });
+    });
+});
+
+
+
+
