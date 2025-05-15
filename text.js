@@ -2,7 +2,10 @@ const mainCont = document.querySelector(".main-container");
 
 // let gridSize = prompt("What size canvas do you want? (max. 100)");
 
-
+const gridBtn = document.createElement("button");
+gridBtn.className = "grid-btn";
+document.body.appendChild(gridBtn);
+gridBtn.textContent = "Select  grid size";
 
 
 function makeRow(num) {
@@ -16,7 +19,7 @@ function makeRow(num) {
     }
 }
 
-makeRow(64);
+makeRow(16);
 
 const gridHover = document.querySelectorAll(".grid-box")
 gridHover.forEach(grid => {
@@ -24,3 +27,4 @@ gridHover.forEach(grid => {
         grid.style.backgroundColor = "black";
     })
 })
+
