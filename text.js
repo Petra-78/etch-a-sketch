@@ -1,4 +1,4 @@
-const mainCont = document.querySelector(".main-container");
+const mainCont = document.querySelector(".grid-container");
 const gridBtn = document.querySelector(".grid-btn");
 const clearBtn = document.querySelector(".clear-btn");
 const rainbowBtn = document.querySelector(".rainbow-btn");
@@ -30,7 +30,7 @@ function makeGrid(num) {
     }
 }
 
-makeGrid(16);
+makeGrid(50);
 
 const gridHover = document.querySelectorAll(".grid-box");
     gridHover.forEach(grid => {
